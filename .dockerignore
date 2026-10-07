@@ -1,0 +1,45 @@
+# Dependencias
+node_modules
+.pnp
+.pnp.js
+
+# Build de Next.js
+.next
+out
+build
+coverage
+
+# Git y tooling
+.git
+.gitignore
+.opencode
+.vscode
+.idea
+
+# Base de datos local y datos sensibles
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+data
+.env
+.env.*
+!.env.example
+
+# Documentación y pruebas (no necesarios en la imagen)
+tests
+scripts/validate-games-query.ts
+tasks.md
+architecture.md
+requirements.md
+README.md
+
+# Artefactos de TypeScript/ESLint
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+next-env.d.ts
+.eslintcache
+
+# Logs
+npm-debug.log*
+*.log

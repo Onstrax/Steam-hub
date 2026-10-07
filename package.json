@@ -1,0 +1,53 @@
+{
+  "name": "steam-library-hub",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Interfaz web local para visualizar, filtrar y gestionar tu biblioteca de Steam con datos de Steam, ProtonDB, HowLongToBeat y CheapShark.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Onstrax/Steam-hub.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test --test-reporter=spec tests/**/*.test.ts"
+  },
+  "dependencies": {
+    "@tanstack/react-table": "^9.2.6",
+    "axios": "^1.20.0",
+    "better-sqlite3": "^13.0.3",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.45.3",
+    "howlongtobeat": "^1.8.0",
+    "lucide-react": "^1.52.0",
+    "next": "14.2.35",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "@mrfentmen/sqlite-mcp": "^1.0.0",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^20.19.43",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  },
+  "allowScripts": {
+    "better-sqlite3@13.0.3": true
+  }
+}

@@ -1,0 +1,31 @@
+services:
+  steam-hub:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: steam-library-hub:local
+    container_name: steam-library-hub
+    ports:
+      - "${HOST_PORT:-3311}:3000"
+    environment:
+      DATABASE_PATH: /data/steam_hub.db
+    env_file:
+      - path: .env.local
+        required: false
+      - path: .env
+        required: false
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
